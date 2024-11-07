@@ -10,17 +10,45 @@ menu.addEventListener('click', () => {
 
 
 
-/* Logica da mudança de Idioma */
 function changeLanguage(element) {
     var selectedValue = element.value;
 
-    // Redireciona o usuário para a página selecionada
-    if (selectedValue === 'l2') {
-        window.location.href = '/index.html'; // Redireciona para a versão em português
-    } else if (selectedValue === 'l3') {
-        window.location.href = '/html/engindex.html'; // Redireciona para a versão em inglês
+    // Obtenha o nome da página atual (ex.: "index.html", "engcontact.html")
+    var currentPage = window.location.pathname.split("/").pop();
+
+    // Defina o mapeamento das páginas em português para suas equivalentes em inglês
+    var pages = {
+        'index.html': 'engindex.html',
+        'Produtos.html': 'engproducts.html',
+        'Contato.html': 'engcontact.html',
+        'Sobre.html': 'engaboutus.html'
+    };
+
+    // Verifica o idioma selecionado e redireciona para a página correspondente
+    if (selectedValue === 'l2') { // Caso Português
+        for (const [ptPage, enPage] of Object.entries(pages)) {
+            if (currentPage === enPage) {
+                // Redireciona para a versão em português na pasta /html/
+                window.location.href = `/html/${ptPage}`;
+                return;
+            }
+        }
+        // Se já estiver em uma página em português ou sem mapeamento, redireciona para o index em português
+        window.location.href = '/index.html';
+    } else if (selectedValue === 'l3') { // Caso Inglês
+        if (pages[currentPage]) {
+            // Redireciona para a versão em inglês na pasta /html/
+            window.location.href = `/html/${pages[currentPage]}`;
+        } else {
+            // Se já estiver em uma página em inglês ou sem mapeamento, redireciona para o index em inglês
+            window.location.href = '/html/engindex.html';
+        }
     }
 }
+
+
+
+
 /* Logica do carrosel */
 let currentIndex = 0;
 const slides = document.querySelectorAll('.carousel-item');
