@@ -1714,7 +1714,7 @@ textarea:focus-visible {
         margin: auto;
         overflow: hidden;
         box-sizing: border-box;
-        scale: 150%;
+        scale: 120%;
     }
     
     .carousel-images {
