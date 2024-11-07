@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <title>KingsGel</title>
+</head>
+<body>
+    <header>
+        <nav class="navigation">
+            <a href="/html/engindex.html" class="logo"><img src="/img/LogoGbranco.png" width="200" height="200" alt=""></a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="/html/engindex.html">Welcome</a></li>
+                <li class="nav-item"><a href="/html/engaboutus.html"></i>About Us</a></li>
+                <li class="nav-item"><a href="/html/engproducts.html">Products</a></li>
+                <li class="nav-item"><a href="/html/engcontact.html">Contacts</a></li>
+                <li>
+                    <select id="languageSelect" onchange="changeLanguage(this)">
+                        <option value="l1">Language</option>
+                        <option value="l2">Português</option>
+                        <option value="l3">English</option>
+                    </select>
+                </li>
+                
+            </ul>
+            <div class = "menu">
+                <select id="MobilelanguageSelect" onchange="changeLanguage(this)">
+                    <option value="l1">Language</option>
+                    <option class = opt  value="l2">Português</option>
+                    <option class = opt  value="l3">English</option>
+                </select>
+                <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                </div>
+                
+
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="form">
+            <form action="#">
+                <div class="form-header">
+                    <div class="Ctitle">
+                        <h1>contact us</h1>
+                    </div>
+                    
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="firstname">First name</label>
+                        <input id="firstname" type="text" name="firstname" placeholder="Enter your first name" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="lastname">Last name</label>
+                        <input id="lastname" type="text" name="lastname" placeholder="Enter your last name" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Enter your e-mail" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="number">Cel phone</label>
+                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="password">Local</label>
+                        <input id="password" type="text" name="password" placeholder="Enter your local" required>
+                    </div>
+
+                        
+                    <div class="Caixadet">
+                        <label for="confirmPassword">Subject</label>
+                        <textarea name="Assunto" id="confirmPassword" placeholder="write here what interests you" cols="60" rows="10"></textarea>
+                    </div>
+
+                </div>
+
+               
+
+                <div class="continue-button">
+                  <button type="submit">Submit</button>
+                </div>
+
+                <section class="endereco">
+                    <h1 id="endtitle">
+                        Where to find us?
+                    </h1>
+                    <div id="end">
+                    
+                    
+                    <h4 id="endtxt"> Av. do Trabalhador, 2681<br>Centro Empresarial Castelo Branco<br>CEP 18500-000<br>Boituva-Sp </h4>
+                </div>
+                <div id="endner">
+                    <h4 id="endcel"><i class='bx bxs-phone'></i> <a href="tel:+5515997257430">+55 15 99725-7430</a>  </h4>
+                </div>
+                    
+
+
+
+                </section>
+
+            </form>
+        </section>
+    
+    </main>
+    
+    <footer>
+        <div id="footer_content">
+            <div id="footer_contacts">
+                <h1>Kings Gel</h1>
+                 <p>Towards 40 years</p>
+
+                
+            </div>
+            
+            <ul class="footer-list">
+                <li>
+                    <h3><a href="/html/engindex.html">Welcome</a></h3>
+                </li>
+        
+            </ul>
+
+            <ul class="footer-list">
+                <li>
+                    <h3><a href="/html/engaboutus.html">About us</a></h3>
+                </li>
+                </ul>
+            
+                <ul class="footer-list">
+                    <li>
+                        <h3><a href="/html/engproducts.html">Products</a></h3>
+                    </li>
+                </ul>    
+
+                <ul class="footer-list">
+                     <li>
+                        <h3><a href="/html/engcontact.html">Contacts</a></h3>
+                    </li>
+                </ul>
+        </div>
+
+        <div id="footer_copyright">
+            &#169
+            Kings Gel All rights reserved
+        </div>
+    </footer> 
+<script src="/Script/script.js"></script> 
+</body>
+</html>
