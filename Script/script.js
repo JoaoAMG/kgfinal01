@@ -124,3 +124,34 @@ carouselImages.addEventListener('mouseleave', touchEnd);
 carouselImages.addEventListener('touchstart', touchStart);
 carouselImages.addEventListener('touchmove', touchMove);
 carouselImages.addEventListener('touchend', touchEnd);
+
+// enviar formulario com node e nodemailer
+
+document.getElementById('contact-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const data = {};
+    formData.forEach((value, key) => {
+        data[key] = value;
+    });
+
+    try {
+        const response = await fetch('/api/send-email', {  // Rota da função serverless no Vercel
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+
+        const result = await response.json();
+        if (response.ok) {
+            alert('E-mail enviado com sucesso!');
+        } else {
+            alert('Erro ao enviar e-mail: ' + result.message);
+        }
+    } catch (error) {
+        alert('Erro ao enviar o e-mail');
+    }
+});
